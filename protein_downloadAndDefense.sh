@@ -2,7 +2,7 @@
 # Input: path to tsv file, column containing accession numbers, directory
 # Before running: mkdir [DIR_NAME]
 # Before running: conda activate saltycrispy
-# Usage example: ./ncbiDownloadDF.sh imgInput/img_freshwater_test.tsv 3 DIR_NAME
+# Usage example: ./protein_downloadAndDefense.sh input/freshwater_bacteria.tsv 3 DIR_NAME
 
 #!/usr/bin/env bash
 
