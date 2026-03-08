@@ -20,10 +20,13 @@ class UseModelSimpleArgs(Tap):
 # Input= dir instead of .fasta
 def main():
     args = UseModelSimpleArgs().parse_args()
+    
     fasta_dir = Path(args.fasta_dir)
     save_dir = Path(args.save_dir)
+    
     if not fasta_dir.exists() or not fasta_dir.is_dir():
-        raise ValueError(f"Invalid fasta_dir: {fatsa_dir}")
+        raise ValueError(f"Invalid fasta_dir: {fasta_dir}")
+        
     save_dir.mkdir(parents=True, exist_ok=True)
 
 # Load trained model
@@ -32,9 +35,14 @@ def main():
     
     sequence_derivation = "default" if args.print_perf else 0
 
-# For loop
 # Store FASTA files first
     fasta_files = list(fasta_dir.glob("*.faa"))
+
+    if not fasta_files:
+        print("No FASTA files found.")
+        return
+        
+# Process each Fasta file   
     for fasta_file in fasta_files:
         print(f"Processing: {fasta_file.name}")
 
@@ -54,7 +62,8 @@ def main():
             raise AttributeError("Model does not support predict_proba")
 
         proba = model.predict_proba(embeddings)
-        if proba.shape[1]!=2:
+        
+        if proba.shape[1] != 2:
             raise ValueError("Expected binary classifier probabilities")        
             
         decisions = [("non-tolerant" if p == 0 else "salt-tolerant") for p in predictions]
