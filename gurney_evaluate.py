@@ -55,7 +55,7 @@ def main():
 
             if combined.labels is not None:
                 print(evaluate_model(model, embeddings, combined.labels))
-            else
+            else:
                 print("No labels available; skipping performance evaluation")
             print("=" * 50)
     
