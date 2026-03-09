@@ -23,12 +23,11 @@ def main():
     
     fasta_dir = Path(args.fasta_dir)
     save_dir = Path(args.save_dir)
+    save_dir.mkdir(parents=True, exist_ok=True)
     
     if not fasta_dir.exists() or not fasta_dir.is_dir():
         raise ValueError(f"Invalid fasta_dir: {fasta_dir}")
         
-    save_dir.mkdir(parents=True, exist_ok=True)
-
 # Load trained model
     with open(args.model_path, "rb") as f:
         model = pickle.load(f)
@@ -37,15 +36,21 @@ def main():
 
 # Store FASTA files first
     fasta_files = list(fasta_dir.glob("*.faa"))
-
     if not fasta_files:
         print("No FASTA files found.")
         return
         
 # Process each Fasta file   
     for fasta_file in fasta_files:
-        print(f"Processing: {fasta_file.name}")
+        predictions_output = save_dir / f"{fasta_file.stem}.csv"
 
+         # Skip file if already processed
+        if predictions_output.exists():
+            print(f"Skipping {fasta_file.name} (already processed)")
+            continue  
+            
+        print(f"Processing: {fasta_file.name}")
+        
         combined = ImportedFasta.from_fasta(fasta_file, sequence_derivation)
         embeddings = checkpoint150(combined.sequences, combined.labels, disable_accelerators=args.disable_accelerators, batch_size=args.batch_size)
 
@@ -73,12 +78,9 @@ def main():
         decisions = [("non-tolerant" if p == 0 else "salt-tolerant") for p in predictions]
         df = pd.DataFrame({ "sequences": combined.sequences, "predicted labels": decisions, "predictions": predictions, "confidences": model.predict_proba(embeddings)[:,1] })
     
-    # Output file named after input FASTA file
-        predictions_output = save_dir / f"{fasta_file.stem}.csv"
+    
         df.to_csv(predictions_output, index=False)
-
         print(f"Saved: {predictions_output.absolute()}")
-
 
     print("All files processed")
 
