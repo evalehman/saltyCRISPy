@@ -52,7 +52,11 @@ def main():
         if args.print_perf:
             print("=" * 50)
             print(f"MODEL PERFORMANCE for {fasta_file.name}:")
-            print(evaluate_model(model, embeddings, combined.labels))
+
+            if combined.labels is not None:
+                print(evaluate_model(model, embeddings, combined.labels))
+            else
+                print("No labels available; skipping performance evaluation")
             print("=" * 50)
     
         predictions = model.predict(embeddings)
