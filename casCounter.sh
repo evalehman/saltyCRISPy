@@ -5,7 +5,7 @@ cd $1
 DIRS=$(ls)
 COUNTER=0
 for dir in $DIRS; do
-    numCas=$(grep "Cas" $dir/dfOutput/protein_defense_finder_systems.tsv | wc -l) 
+    numCas=$(grep "Cas" $dir/dfOutput/*systems.tsv | wc -l) 
     # if numCas not 0 add 1
     if [ "$numCas" -ne "0" ]; then
         echo "CrisprCas found in $dir"
