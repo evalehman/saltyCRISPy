@@ -35,7 +35,7 @@ def main():
     sequence_derivation = "default" if args.print_perf else 0
 
 # Store FASTA files first
-    fasta_files = list(fasta_dir.glob("*.fa*"))
+    fasta_files = list(fasta_dir.glob("*.faa")) + list(fasta_dir.glob("*.fasta"))
     if not fasta_files:
         print("No FASTA files found.")
         return
