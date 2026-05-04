@@ -1,6 +1,6 @@
-# Script used to download multiple genomes and run defense finder on said genomes
+# Download multiple genomes and run defense-finder on said genomes
 # Input: path to tsv file, column containing accession numbers, directory
-# Usage example: ./downloadAndDF.sh imgInput/img_freshwater_test.tsv 3 freshGenomes
+# Usage example: ./downloadAndDefense.sh input/genomes.tsv 3 freshwaterGenomes
 # Before running: conda activate defense-finder
 
 INPUT_PATH=$1
