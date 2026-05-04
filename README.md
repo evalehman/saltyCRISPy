@@ -1,6 +1,6 @@
 # saltyCRISPy
 
-All scripts written for the saltyCRISPy project are below. Scripts are listed in the order they were ran with the exception of the four scripts at the top. These scripts accomplish similar tasks depending on what you need. 
+All scripts written for the saltyCRISPy project are below. Scripts are listed in the order they were ran with the exception of the four scripts at the top. These scripts accomplish similar tasks depending on specific needs. 
 
 ## genomegrabber.sh
 
