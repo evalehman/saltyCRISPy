@@ -1,6 +1,6 @@
-# Script used to download multiple genomes with EDirect
+# Downloads multiple genomes with EDirect
 # Input: path to tsv file, column containing accession numbers, directory
-# Usage example: ./genomegrabber.sh input_files/inputfile.tsv 3 freshwater_bacteria
+# Usage example: ./genomegrabber.sh input_files/inputfile.tsv 3 freshwater_genomes
 # Before running: mkdir DIR_NAME 
 # Make sure you have EDirect installed
 
