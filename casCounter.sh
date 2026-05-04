@@ -1,4 +1,4 @@
-# Counts the number of times "Cas" shows up in a directory
+# Counts the number of times "cas" shows up in defense-finder output
 # Usage example: ./casCounter.sh freshwaterGenomes
 # Where freshwaterGenomes is a directory
 
