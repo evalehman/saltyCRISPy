@@ -1,6 +1,6 @@
 # Run DefenseFinder on a directory full of genomes or proteomes 
 # Input: directory
-# Usage example: ./df.sh freshGenomes
+# Usage example: ./df.sh freshwaterGenomes
 # Before running: conda activate defense-finder
 
 INPUT_PATH=$1
