@@ -1,5 +1,5 @@
 # Takes the mean of all Haloclass salinity protein predictions per proteome 
-# Make sure you're already in the proper directory 
+# Make sure you're already in the proper predictions directory 
 # Usage example: ./meanfinder.sh
 
 
