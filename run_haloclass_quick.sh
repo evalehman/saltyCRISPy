@@ -1,3 +1,5 @@
+# SLURM Workload Manager example 
+
 #!/bin/bash
 #SBATCH --job-name=haloclass         # Job name
 #SBATCH --output=haloclass_%j.out    # STDOUT log
