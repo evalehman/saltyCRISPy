@@ -1,5 +1,7 @@
 # saltyCRISPy
 
+All scripts written for the saltyCRISPy project are below. Scripts are listed in the order they were ran with the exception of the four scripts at the top. These scripts accomplish similar tasks depending on what you need. 
+
 ## genomegrabber.sh
 
 Downloads multiple genomes with EDirect.
@@ -10,11 +12,11 @@ Downloads multiple genomes with EDirect and runs defense-finder on said genomes.
 
 ## protein_downloadAndDefense.sh
 
-Downloads multiple proteomes through NCBI datasets before running defense-finder said proteomes. 
+Downloads multiple proteomes through NCBI datasets before running defense-finder on said proteomes. 
 
 ## df.sh
 
-Run DefenseFinder on a directory full of genomes or proteomes. Use if files are already downloaded. 
+Runs defense-finder on a directory full of genomes or proteomes. Use if files are already downloaded. 
 
 ## casCounter.sh
 
