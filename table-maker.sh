@@ -13,7 +13,7 @@ for arg in "$@"; do
         ACCESSION=$(basename "$acc") 
         
         # Get normalized mean from normmean.txt under predictions directory
-        NMEAN=$(grep $ACCESSION predictions_$DATASET/mean.txt | cut -d' ' -f2) 
+        MEANS=$(grep $ACCESSION predictions_$DATASET/mean.txt | cut -d' ' -f2) 
         
         # Get crispr +/- from casresults.txt
         if grep "$ACCESSION" "$DATASET"/casresults.txt | grep "NONE"; then
@@ -23,6 +23,6 @@ for arg in "$@"; do
         fi
         
         # Write to the file
-        echo "$ACCESSION,$NMEAN,$CAS,$DATASET" >> data_table.csv
+        echo "$ACCESSION,$MEANS,$CAS,$DATASET" >> data_table.csv
     done
 done
