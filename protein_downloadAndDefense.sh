@@ -1,8 +1,8 @@
-# Script used to download multiple protein files through NCBI datasets before running Defense Finder on them
+# Downloads multiple protein files through NCBI datasets before running Defense Finder on them
 # Input: path to tsv file, column containing accession numbers, directory
 # Before running: mkdir [DIR_NAME]
-# Before running: conda activate saltycrispy
-# Usage example: ./protein_downloadAndDefense.sh input/freshwater_bacteria.tsv 3 DIR_NAME
+# Before running: conda activate saltycrispy (environment name) 
+# Usage example: ./protein_downloadAndDefense.sh input/freshwater_genomes.tsv 3 DIR_NAME
 
 #!/usr/bin/env bash
 
