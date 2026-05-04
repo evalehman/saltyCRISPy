@@ -1,3 +1,6 @@
+# Edited Haloclass evaluate.py code 
+# Changed to take an input directory instead of an input file
+# Usage example: python3 haloclass-source/haloclass/publish/gurney_evaluate.py --fasta_dir INPUT_DIR
 
 import pickle
 import pandas as pd
