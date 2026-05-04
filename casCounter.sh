@@ -1,4 +1,4 @@
-# Script used to count the number of times "Cas" shows up in a directory
+# Counts the number of times "Cas" shows up in a directory
 # Usage example: ./casCounter.sh freshwaterGenomes
 # Where freshwaterGenomes is a directory
 
