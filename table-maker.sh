@@ -1,4 +1,5 @@
-# Usage example: ./table-maker.sh DIR1 DIR2 (ect.)
+# Builds a table with accession numbers, salinity predicition means, cas presence detection, and dataset type
+# Usage example: ./table-maker.sh DIR1 DIR2 ...(etc.)
 
 # Create file and headers
 echo "Accession Number,Salinity Prediction,Cas Presence,Dataset" > data_table.csv
