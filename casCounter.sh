@@ -1,6 +1,7 @@
 # Script used to count the number of times "Cas" shows up in a directory
-# Usage example: ./casCounter.sh freshGenomes
-# Where freshGenomes is a directory
+# Usage example: ./casCounter.sh freshwaterGenomes
+# Where freshwaterGenomes is a directory
+
 cd $1
 DIRS=$(ls)
 COUNTER=0
