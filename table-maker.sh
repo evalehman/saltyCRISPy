@@ -24,6 +24,8 @@ for arg in "$@"; do
         fi
         
         # Write to the file
-        echo "$ACCESSION,$MEANS,$CAS,$DATASET" >> data_table.csv
+        if [[ grep "$ACCESSION" "$DATASET"/casresults.txt ]] && [[ grep "$ACCESSION" "predictions_$DATASET/means.txt" ]]
+           echo "$ACCESSION,$MEANS,$CAS,$DATASET" >> data_table.csv
+        fi 
     done
 done
